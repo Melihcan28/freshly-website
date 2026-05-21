@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freshly – Buzdolabını akıllıca yönet</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-icon">🌿</span>
+    Freshly
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Özellikler</a></li>
+    <li><a href="#pricing">Planlar</a></li>
+    <li><a href="#howitworks">Nasıl Çalışır</a></li>
+  </ul>
+  <a href="#download" class="nav-cta">İndir →</a>
+  <div class="nav-hamburger" onclick="toggleMenu()" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#features" onclick="toggleMenu()">Özellikler</a>
+  <a href="#pricing" onclick="toggleMenu()">Planlar</a>
+  <a href="#howitworks" onclick="toggleMenu()">Nasıl Çalışır</a>
+  <a href="#download" class="mobile-cta" onclick="toggleMenu()">İndir →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-text reveal">
+      <div class="hero-tag"><span></span> Yeni · Ücretsiz İndir</div>
+      <h1>Buzdolabını <em>akıllıca</em> yönet, israfı önle</h1>
+      <p>Freshly ile son kullanma tarihlerini takip et, eldeki malzemelerle tarif önerileri al, alışveriş listeni otomatik oluştur.</p>
+      <div class="hero-actions">
+        <a href="download" class="btn-primary" style="display:inline-flex;">
+  <svg width="20" height="20" viewBox="0 0 814 1000" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.5 135.4-317.3 269-317.3 71 0 130.1 46.8 174.9 46.8 42.8 0 109.7-49.5 189.2-49.5 30.4 0 108.2 2.6 168.6 74.9zm-111.4-192.6c33.1-39.5 56.7-95.2 56.7-150.9 0-7.7-.6-15.5-1.9-22.3-53.9 2-117.5 36.1-155.5 81.5-29.8 33.7-57.8 89.8-57.8 146.5 0 8.3 1.3 16.6 1.9 19.2 3.2.6 8.4 1.3 13.6 1.3 48.1 0 108.8-32.4 142.9-75.3z"/>
+  </svg>
+  App Store'dan İndir
+</a>
+        <a href="#features" class="btn-secondary">Nasıl çalışır? →</a>
+      </div>
+    </div>
+    <div class="hero-phones reveal reveal-delay-2">
+      <div class="phone-mockup phone-left">
+        <div class="phone-screen" style="background:linear-gradient(160deg,#1d7a4e 0%,#1d7a4e 35%,#f8f8f8 35%);">
+          <div class="phone-notch"></div>
+          <div class="phone-header" style="padding:7px 14px 12px;">
+            <div style="font-size:9px;color:rgba(255,255,255,0.7);margin-bottom:2px;">2/3</div>
+            <div style="font-family:'Lora',serif;font-size:13px;font-weight:600;color:white;">Freshly ile neler yaparsın?</div>
+          </div>
+          <div style="flex:1;padding:10px 14px;display:flex;flex-direction:column;gap:7px;">
+            <div style="background:white;border-radius:9px;padding:8px 11px;display:flex;gap:9px;align-items:center;">
+              <span style="font-size:14px;">🗄️</span>
+              <div><div style="font-size:9px;font-weight:500;color:#1a2e22;">Dolabını takip et</div><div style="font-size:8px;color:#7a9485;">Son kullanma tarihleri otomatik</div></div>
+            </div>
+            <div style="background:white;border-radius:9px;padding:8px 11px;display:flex;gap:9px;align-items:center;">
+              <span style="font-size:14px;">🔍</span>
+              <div><div style="font-size:9px;font-weight:500;color:#1a2e22;">Tarif önerileri al</div><div style="font-size:8px;color:#7a9485;">Eldeki malzemelerle pişir</div></div>
+            </div>
+            <div style="background:white;border-radius:9px;padding:8px 11px;display:flex;gap:9px;align-items:center;">
+              <span style="font-size:14px;">🔔</span>
+              <div><div style="font-size:9px;font-weight:500;color:#1a2e22;">Akıllı bildirimler</div><div style="font-size:8px;color:#7a9485;">Ürün bitmeden uyarı al</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phone-mockup phone-main">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="phone-header">
+            <div class="phone-greeting">Merhaba 👋</div>
+            <div class="phone-title">Bugün ne pişirelim?</div>
+          </div>
+          <div class="phone-stats">
+            <div class="phone-stat"><div class="phone-stat-num">7</div><div class="phone-stat-label">Ürün</div></div>
+            <div class="phone-stat"><div class="phone-stat-num">0</div><div class="phone-stat-label">Tarif</div></div>
+            <div class="phone-stat"><div class="phone-stat-num" style="color:#f9c846;">🔥5</div><div class="phone-stat-label">Streak</div></div>
+          </div>
+          <div class="phone-body">
+            <div class="phone-alert">⚠️ <span>Yumurta, Beyaz Peynir yakında bitiyor</span></div>
+            <div class="phone-card">
+              <div class="phone-card-label">EN HIZLI TARİF · 8 DK</div>
+              <div class="phone-card-title">Sahanda Yumurta</div>
+              <div class="phone-card-sub">yumurta, tereyağı, tuz</div>
+            </div>
+            <div class="phone-item">
+              <div><div class="phone-item-name">🥚 Yumurta</div><div class="phone-item-sub">6 adet · Son 1 gün</div></div>
+              <span class="phone-item-badge badge-red">Bugün!</span>
+            </div>
+            <div class="phone-item">
+              <div><div class="phone-item-name">🧀 Beyaz Peynir</div><div class="phone-item-sub">200g · 2 gün kaldı</div></div>
+              <span class="phone-item-badge badge-yellow">Yakında</span>
+            </div>
+          </div>
+          <div class="phone-nav">
+            <div class="phone-nav-item active"><div class="phone-nav-dot">🏠</div><span>Ana</span></div>
+            <div class="phone-nav-item"><div class="phone-nav-dot">🗄️</div><span>Dolabım</span></div>
+            <div class="phone-nav-item"><div class="phone-nav-dot">🍴</div><span>Tarifler</span></div>
+            <div class="phone-nav-item"><div class="phone-nav-dot">🛒</div><span>Alışveriş</span></div>
+            <div class="phone-nav-item"><div class="phone-nav-dot">👤</div><span>Profil</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="phone-mockup phone-right">
+        <div class="phone-screen" style="background:#f8f8f8;">
+          <div class="phone-notch" style="background:#1a1a1a;"></div>
+          <div style="background:#1d7a4e;padding:14px 16px;text-align:center;">
+            <div style="font-family:'Lora',serif;font-size:15px;font-weight:600;color:white;">Peynirli Tost</div>
+            <div style="font-size:26px;margin:7px 0;">🥪</div>
+          </div>
+          <div style="padding:11px 16px;display:flex;gap:8px;">
+            <span style="background:#f0f0f0;border-radius:100px;padding:4px 11px;font-size:9px;color:#444;">⏱ 8 dk</span>
+            <span style="background:#f0f0f0;border-radius:100px;padding:4px 11px;font-size:9px;color:#444;">👤 1 kişi</span>
+            <span style="background:#f0f0f0;border-radius:100px;padding:4px 11px;font-size:9px;color:#444;">⭐ Kolay</span>
+          </div>
+          <div style="padding:8px 16px;">
+            <div style="font-size:10px;font-weight:600;color:#1a2e22;margin-bottom:7px;">Malzemeler</div>
+            <div style="font-size:9px;color:#3d5a47;line-height:1.9;">• Ekmek<br>• Beyaz Peynir<br>• Domates<br>• Tereyağı</div>
+          </div>
+          <div style="padding:8px 16px;">
+            <div style="font-size:10px;font-weight:600;color:#1a2e22;margin-bottom:7px;">Yapılışı</div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;gap:8px;align-items:flex-start;font-size:8.5px;color:#3d5a47;"><span style="width:17px;height:17px;background:#1d7a4e;border-radius:50%;color:white;font-size:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</span>Ekmeğin içine peynir koy.</div>
+              <div style="display:flex;gap:8px;align-items:flex-start;font-size:8.5px;color:#3d5a47;"><span style="width:17px;height:17px;background:#1d7a4e;border-radius:50%;color:white;font-size:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</span>Tereyağı sür.</div>
+              <div style="display:flex;gap:8px;align-items:flex-start;font-size:8.5px;color:#3d5a47;"><span style="width:17px;height:17px;background:#1d7a4e;border-radius:50%;color:white;font-size:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</span>Tost makinesinde pişir.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="section-center reveal">
+    <div class="section-tag">Özellikler</div>
+    <h2 class="section-title">Her şey <em>bir arada</em></h2>
+    <p class="section-desc">Freshly, mutfağını daha akıllı yönetmek için ihtiyacın olan her şeyi sunuyor.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card large reveal">
+      <div>
+        <div class="feature-icon">🗄️</div>
+        <h3>Dolabını takip et</h3>
+        <p>Ürünleri barkod tarayarak veya manuel olarak ekle. Freshly, son kullanma tarihlerini izler ve seni önceden uyarır. Bir daha çöpe atmak zorunda kalmayacaksın.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="fv-row"><div style="display:flex;align-items:center;"><span class="fv-emoji">🥚</span><div><div class="fv-name">Yumurta</div><div class="fv-sub">6 adet</div></div></div><span class="fv-days red">Bugün!</span></div>
+        <div class="fv-row"><div style="display:flex;align-items:center;"><span class="fv-emoji">🧀</span><div><div class="fv-name">Beyaz Peynir</div><div class="fv-sub">200g</div></div></div><span class="fv-days yellow">2 gün kaldı</span></div>
+        <div class="fv-row"><div style="display:flex;align-items:center;"><span class="fv-emoji">🍗</span><div><div class="fv-name">Tavuk Göğsü</div><div class="fv-sub">600g</div></div></div><span class="fv-days green">4 gün kaldı</span></div>
+        <div class="fv-row"><div style="display:flex;align-items:center;"><span class="fv-emoji">🥛</span><div><div class="fv-name">Süt</div><div class="fv-sub">1L</div></div></div><span class="fv-days green">7 gün kaldı</span></div>
+      </div>
+    </div>
+    <div class="feature-card reveal reveal-delay-1">
+      <div class="feature-icon">🍳</div>
+      <h3>Tarif önerileri</h3>
+      <p>Eldeki malzemelere göre anında tarif önerileri al. Hem hızlı hem de israfı önleyen tarifler.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-2">
+      <div class="feature-icon">🛒</div>
+      <h3>Akıllı alışveriş listesi</h3>
+      <p>Biten ürünler otomatik listeye eklenir. Markete gittiğinde tüm liste hazır.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-1">
+      <div class="feature-icon">🔔</div>
+      <h3>Akıllı bildirimler</h3>
+      <p>Ürünler bitmeden önce hatırlatma al. Kaç gün önceden uyarılacağını sen belirle.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-2">
+      <div class="feature-icon">📊</div>
+      <h3>Tasarruf takibi</h3>
+      <p>Bu ay kaç ürün kurtardığını ve ne kadar tasarruf ettiğini görün. Premium ile detaylı istatistikler.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-center reveal">
+    <div class="section-tag">Planlar</div>
+    <h2 class="section-title">Sana uygun <em>planı seç</em></h2>
+    <p class="section-desc">Freshly'yi ücretsiz kullanabilir, daha fazlası için Premium'a geçebilirsin.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="pricing-card reveal reveal-delay-1">
+      <div class="pricing-plan">Ücretsiz</div>
+      <div class="pricing-price">₺0</div>
+      <div class="pricing-period">sonsuza kadar ücretsiz</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li><span class="check">✓</span> Dolap takibi (20 ürüne kadar)</li>
+        <li><span class="check">✓</span> Son kullanma uyarıları</li>
+        <li><span class="check">✓</span> Tarif önerileri (günde 3)</li>
+        <li><span class="check">✓</span> Alışveriş listesi</li>
+        <li><span class="check">✓</span> Barkod tarayıcı</li>
+        <li class="disabled"><span class="cross">✕</span> Sınırsız ürün ekleme</li>
+        <li class="disabled"><span class="cross">✕</span> Tasarruf istatistikleri</li>
+        <li class="disabled"><span class="cross">✕</span> Haftalık menü planlama</li>
+        <li class="disabled"><span class="cross">✕</span> Reklamsız deneyim</li>
+      </ul>
+      <a href="#download" class="pricing-btn free">Ücretsiz Başla</a>
+    </div>
+    <div class="pricing-card premium reveal reveal-delay-2">
+      <div class="pricing-badge">⭐ En Popüler</div>
+      <div class="pricing-plan">Premium</div>
+      <div class="pricing-price"><span>₺</span>29</div>
+      <div class="pricing-period">aylık · İstediğinde iptal et</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li><span class="check">✓</span> Sınırsız ürün ekleme</li>
+        <li><span class="check">✓</span> Son kullanma uyarıları</li>
+        <li><span class="check">✓</span> Sınırsız tarif önerileri</li>
+        <li><span class="check">✓</span> Alışveriş listesi</li>
+        <li><span class="check">✓</span> Barkod tarayıcı</li>
+        <li><span class="check">✓</span> Tasarruf istatistikleri</li>
+        <li><span class="check">✓</span> Haftalık menü planlama</li>
+        <li><span class="check">✓</span> Reklamsız deneyim</li>
+        <li><span class="check">✓</span> Öncelikli destek</li>
+      </ul>
+      <a href="#download" class="pricing-btn pro">Premium'a Geç →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="howitworks" id="howitworks">
+  <div class="section-center reveal">
+    <div class="section-tag">Nasıl Çalışır</div>
+    <h2 class="section-title">3 adımda <em>başla</em></h2>
+  </div>
+  <div class="steps">
+    <div class="step reveal reveal-delay-1">
+      <div class="step-num">1</div>
+      <h3>Ürünleri ekle</h3>
+      <p>Barkodu tara ya da ürünü manuel olarak gir. Son kullanma tarihini ekle, gerisini Freshly halleder.</p>
+    </div>
+    <div class="step reveal reveal-delay-2">
+      <div class="step-num">2</div>
+      <h3>Uyarıları al</h3>
+      <p>Ürünler bitmek üzereyken seni uyarırız. Hem israf etmezsin hem de gereksiz alışveriş yapmazsın.</p>
+    </div>
+    <div class="step reveal reveal-delay-3">
+      <div class="step-num">3</div>
+      <h3>Pişir ve tasarruf et</h3>
+      <p>Eldeki malzemelere göre tarif önerileri al, yemek pişir ve her ay ne kadar tasarruf ettiğini gör.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-inner">
+    <div class="reveal reveal-delay-1">
+      <div class="stat-num">%30</div>
+      <div class="stat-label">Gıda israfı azalması</div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="stat-num">₺85</div>
+      <div class="stat-label">Haftalık ortalama tasarruf</div>
+    </div>
+    <div class="reveal reveal-delay-3">
+      <div class="stat-num">4.8★</div>
+      <div class="stat-label">App Store puanı</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="download">
+  <div class="cta-card reveal">
+    <div class="cta-icon">🌿</div>
+    <h2>Taze kal, <em>israf etme</em></h2>
+    <p>Freshly ücretsiz. Hemen indir, buzdolabını akıllıca yönetmeye başla.</p>
+    <a href="#" class="btn-primary" style="display:inline-flex;">
+  <svg width="20" height="20" viewBox="0 0 814 1000" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.5 135.4-317.3 269-317.3 71 0 130.1 46.8 174.9 46.8 42.8 0 109.7-49.5 189.2-49.5 30.4 0 108.2 2.6 168.6 74.9zm-111.4-192.6c33.1-39.5 56.7-95.2 56.7-150.9 0-7.7-.6-15.5-1.9-22.3-53.9 2-117.5 36.1-155.5 81.5-29.8 33.7-57.8 89.8-57.8 146.5 0 8.3 1.3 16.6 1.9 19.2 3.2.6 8.4 1.3 13.6 1.3 48.1 0 108.8-32.4 142.9-75.3z"/>
+  </svg>
+  App Store'dan İndir
+</a>
+    <div class="cta-note">iOS için mevcut · Android yakında</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">🌿 Freshly</div>
+  <div>© 2025 Freshly Team. Tüm hakları saklıdır.</div>
+  <div class="footer-links">
+    <a href="#">Gizlilik</a>
+    <a href="#">Kullanım Koşulları</a>
+    <a href="#">İletişim</a>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
