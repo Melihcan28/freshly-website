@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İletişim – Freshly</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+  .contact-hero {
+    padding: 10rem 3rem 4rem; text-align: center; background: var(--cream);
+  }
+  .contact-grid {
+    max-width: 1000px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;
+    padding: 3rem 3rem 7rem;
+  }
+  .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+  .contact-info h2 { font-family: 'Lora', serif; font-size: 1.6rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem; }
+  .contact-info p { font-size: 1rem; color: var(--text-muted); line-height: 1.75; }
+  .contact-card {
+    background: var(--green-pale); border-radius: 18px;
+    padding: 1.4rem 1.6rem; border: 1px solid rgba(26,107,68,0.08);
+    display: flex; align-items: center; gap: 1rem;
+    text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .contact-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,107,68,0.1); }
+  .contact-card-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    background: var(--green-light); color: var(--green-deep);
+    display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .contact-card-title { font-weight: 500; font-size: 0.95rem; color: var(--text-dark); }
+  .contact-card-sub { font-size: 0.85rem; color: var(--text-muted); margin-top: 2px; }
+
+  .social-links { display: flex; gap: 1rem; margin-top: 0.5rem; }
+  .social-btn {
+    width: 46px; height: 46px; border-radius: 14px;
+    background: var(--green-pale); border: 1px solid rgba(26,107,68,0.1);
+    color: var(--green-deep); font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .social-btn:hover { background: var(--green-deep); color: white; transform: translateY(-2px); }
+
+  /* FORM */
+  .contact-form {
+    background: white; border-radius: 24px; padding: 2.4rem;
+    border: 1px solid rgba(26,107,68,0.1);
+    box-shadow: 0 8px 40px rgba(26,107,68,0.07);
+  }
+  .contact-form h2 { font-family: 'Lora', serif; font-size: 1.5rem; font-weight: 600; color: var(--text-dark); margin-bottom: 1.8rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.2rem; }
+  .form-group label { font-size: 0.88rem; font-weight: 500; color: var(--text-mid); }
+  .form-group input, .form-group textarea, .form-group select {
+    padding: 0.85rem 1.1rem; border-radius: 12px;
+    border: 1.5px solid rgba(26,107,68,0.15);
+    font-family: 'DM Sans', sans-serif; font-size: 0.97rem; color: var(--text-dark);
+    background: var(--green-pale); outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    border-color: var(--green-deep);
+    box-shadow: 0 0 0 3px rgba(26,107,68,0.08);
+  }
+  .form-group textarea { resize: vertical; min-height: 130px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-submit {
+    width: 100%; padding: 1rem; border-radius: 100px;
+    background: var(--green-deep); color: white; border: none;
+    font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500;
+    cursor: pointer; transition: all 0.2s; margin-top: 0.5rem;
+    box-shadow: 0 4px 16px rgba(26,107,68,0.25);
+  }
+  .form-submit:hover { background: var(--green-mid); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,107,68,0.3); }
+  .form-success {
+    display: none; text-align: center; padding: 2rem;
+  }
+  .form-success .success-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .form-success h3 { font-family: 'Lora', serif; font-size: 1.4rem; color: var(--text-dark); margin-bottom: 0.5rem; }
+  .form-success p { color: var(--text-muted); font-size: 0.97rem; }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; padding: 2rem 1.5rem 5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-hero { padding: 8rem 1.5rem 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-icon">🌿</span>
+    Freshly
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">Özellikler</a></li>
+    <li><a href="index.html#pricing">Planlar</a></li>
+    <li><a href="index.html#howitworks">Nasıl Çalışır</a></li>
+  </ul>
+  <a href="index.html#download" class="nav-cta">İndir →</a>
+  <div class="nav-hamburger" onclick="toggleMenu()" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#features" onclick="toggleMenu()">Özellikler</a>
+  <a href="index.html#pricing" onclick="toggleMenu()">Planlar</a>
+  <a href="index.html#howitworks" onclick="toggleMenu()">Nasıl Çalışır</a>
+  <a href="index.html#download" class="mobile-cta" onclick="toggleMenu()">İndir →</a>
+</div>
+
+<section class="contact-hero">
+  <div class="section-tag">İletişim</div>
+  <h1 style="font-family:'Lora',serif; font-size:clamp(2.2rem,4vw,3.2rem); font-weight:600; color:var(--text-dark); margin-bottom:1rem;">
+    Merhaba, <em style="font-style:italic;color:var(--green-deep);">nasıl yardımcı olabiliriz?</em>
+  </h1>
+  <p style="font-size:1.05rem; color:var(--text-muted); max-width:500px; margin:0 auto; line-height:1.75;">
+    Soru, öneri veya geri bildiriminiz için bize ulaşın. En kısa sürede dönüş yaparız.
+  </p>
+</section>
+
+<div class="contact-grid">
+  <!-- SOL: BİLGİLER -->
+  <div class="contact-info reveal">
+    <div>
+      <h2>Bize ulaşın</h2>
+      <p>Her türlü soru ve öneriniz için aşağıdaki kanallardan bize yazabilirsiniz.</p>
+    </div>
+
+    <a href="mailto:destek@freshly.app" class="contact-card">
+      <div class="contact-card-icon"><i class="fa-regular fa-envelope"></i></div>
+      <div>
+        <div class="contact-card-title">E-posta</div>
+        <div class="contact-card-sub">destek@freshly.app</div>
+      </div>
+    </a>
+
+    <a href="#" class="contact-card">
+      <div class="contact-card-icon"><i class="fa-brands fa-instagram"></i></div>
+      <div>
+        <div class="contact-card-title">Instagram</div>
+        <div class="contact-card-sub">@freshlyapp</div>
+      </div>
+    </a>
+
+    <a href="#" class="contact-card">
+      <div class="contact-card-icon"><i class="fa-brands fa-twitter"></i></div>
+      <div>
+        <div class="contact-card-title">Twitter / X</div>
+        <div class="contact-card-sub">@freshlyapp</div>
+      </div>
+    </a>
+
+    <div>
+      <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:0.8rem;">Bizi takip et</p>
+      <div class="social-links">
+        <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" class="social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SAĞ: FORM -->
+  <div class="contact-form reveal reveal-delay-2">
+    <h2>Mesaj gönder</h2>
+    <div id="formContent">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Ad</label>
+          <input type="text" placeholder="Adın" id="firstName">
+        </div>
+        <div class="form-group">
+          <label>Soyad</label>
+          <input type="text" placeholder="Soyadın" id="lastName">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>E-posta</label>
+        <input type="email" placeholder="ornek@email.com" id="email">
+      </div>
+      <div class="form-group">
+        <label>Konu</label>
+        <select id="subject">
+          <option value="">Konu seç...</option>
+          <option>Teknik destek</option>
+          <option>Premium / Ödeme</option>
+          <option>Öneri veya geri bildirim</option>
+          <option>Basın & İş birliği</option>
+          <option>Diğer</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mesaj</label>
+        <textarea placeholder="Mesajınızı buraya yazın..." id="message"></textarea>
+      </div>
+      <button class="form-submit" onclick="submitForm()">Gönder →</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <div class="success-icon">🌿</div>
+      <h3>Mesajın ulaştı!</h3>
+      <p>En kısa sürede sana dönüş yapacağız. Teşekkürler!</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">🌿 Freshly</div>
+  <div>© 2025 Freshly Team. Tüm hakları saklıdır.</div>
+  <div class="footer-links">
+    <a href="sss.html">SSS</a>
+    <a href="#">Gizlilik</a>
+    <a href="#">Kullanım Koşulları</a>
+    <a href="iletisim.html">İletişim</a>
+  </div>
+</footer>
+
+<script>
+function submitForm() {
+  const fields = ['firstName', 'lastName', 'email', 'subject', 'message'];
+  for (const id of fields) {
+    if (!document.getElementById(id).value.trim()) {
+      alert('Lütfen tüm alanları doldurun.');
+      return;
+    }
+  }
+  document.getElementById('formContent').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
