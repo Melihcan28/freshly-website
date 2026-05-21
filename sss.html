@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSS – Freshly</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-icon">🌿</span>
+    Freshly
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">Özellikler</a></li>
+    <li><a href="index.html#pricing">Planlar</a></li>
+    <li><a href="index.html#howitworks">Nasıl Çalışır</a></li>
+  </ul>
+  <a href="index.html#download" class="nav-cta">İndir →</a>
+  <div class="nav-hamburger" onclick="toggleMenu()" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#features" onclick="toggleMenu()">Özellikler</a>
+  <a href="index.html#pricing" onclick="toggleMenu()">Planlar</a>
+  <a href="index.html#howitworks" onclick="toggleMenu()">Nasıl Çalışır</a>
+  <a href="index.html#download" class="mobile-cta" onclick="toggleMenu()">İndir →</a>
+</div>
+
+<!-- SSS HERO -->
+<section style="padding: 10rem 3rem 4rem; text-align: center; background: var(--cream);">
+  <div class="section-tag">SSS</div>
+  <h1 style="font-family:'Lora',serif; font-size: clamp(2.2rem,4vw,3.2rem); font-weight:600; color:var(--text-dark); margin-bottom:1rem;">
+    Sık Sorulan <em style="font-style:italic;color:var(--green-deep);">Sorular</em>
+  </h1>
+  <p style="font-size:1.05rem; color:var(--text-muted); max-width:520px; margin:0 auto; line-height:1.75;">
+    Aklında soru mu var? Cevaplar burada. Bulamazsan bize ulaş.
+  </p>
+</section>
+
+<!-- SSS LİSTESİ -->
+<section class="faq" style="padding-top: 2rem;">
+  <div class="faq-list">
+
+    <div class="faq-item reveal">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Android sürümü ne zaman çıkacak?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>Android sürümü üzerinde aktif olarak çalışıyoruz. Çıkış tarihinden haberdar olmak için indirme sayfasındaki bekleme listesine katılabilirsin.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-delay-1">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Verilerim güvende mi?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>Tüm veriler şifreli olarak saklanır ve hiçbir zaman üçüncü taraflarla paylaşılmaz. Gizlilik politikamızı istediğin zaman inceleyebilirsin.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-delay-2">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Ücretsiz plan yeterli mi?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>Ücretsiz plan günlük kullanım için gayet yeterli — 20 ürün, günde 3 tarif önerisi ve alışveriş listesi dahil. Daha fazlasına ihtiyaç duyarsan Premium'a geçebilirsin.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-delay-1">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Barkod tarayıcı her ürünü tanır mı?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>Türkiye'deki büyük market zincirlerinin ürünlerinin büyük çoğunluğunu tanıyoruz. Tanınmayan ürünleri manuel olarak da ekleyebilirsin.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-delay-2">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Premium'u iptal edebilir miyim?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>Evet, istediğin zaman App Store üzerinden iptal edebilirsin. İptal ettiğinde mevcut dönem sonuna kadar Premium özelliklerini kullanmaya devam edersin.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-delay-3">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>İnternet bağlantısı olmadan çalışır mı?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>Temel özellikler çevrimdışı da çalışır. Dolap takibi ve alışveriş listesine internet olmadan da erişebilirsin. Tarif önerileri için bağlantı gereklidir.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-delay-1">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Uygulamayı birden fazla cihazda kullanabilir miyim?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>Evet, aynı hesapla birden fazla iOS cihazda kullanabilirsin. Veriler otomatik olarak senkronize edilir.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-delay-2">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Hesabımı nasıl silebilirim?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>Uygulama içinde Profil → Ayarlar → Hesabı Sil adımlarını takip edebilirsin. Tüm veriler kalıcı olarak silinir.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- İletişim kutusu -->
+  <div style="max-width:760px; margin: 3rem auto 0; background: var(--green-deep); border-radius: 24px; padding: 2.5rem; text-align:center;">
+    <div style="font-size:2rem; margin-bottom:0.8rem;">💬</div>
+    <h3 style="font-family:'Lora',serif; font-size:1.4rem; color:white; margin-bottom:0.6rem;">Cevabını bulamadın mı?</h3>
+    <p style="color:rgba(255,255,255,0.7); font-size:0.97rem; margin-bottom:1.5rem; line-height:1.7;">Bize ulaş, en kısa sürede yardımcı olalım.</p>
+    <a href="mailto:destek@freshly.app" style="background:white; color:var(--green-deep); padding:0.85rem 2rem; border-radius:100px; font-size:1rem; font-weight:500; text-decoration:none; display:inline-block; transition: all 0.2s;">
+      destek@freshly.app
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">🌿 Freshly</div>
+  <div>© 2025 Freshly Team. Tüm hakları saklıdır.</div>
+  <div class="footer-links">
+    <a href="sss.html">SSS</a>
+    <a href="#">Gizlilik</a>
+    <a href="#">Kullanım Koşulları</a>
+    <a href="#">İletişim</a>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
